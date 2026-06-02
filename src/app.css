@@ -1,0 +1,462 @@
+/* Color Variables and Base Reset */
+:root {
+    --color-background-dark: #020617;
+    --color-surface-dark: #0f172a;
+    --color-surface-border: #1e293b;
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-accent-indigo: #6366f1;
+    --color-accent-emerald: #34d399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.website-body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    z-index: 3;
+}
+
+/* Header Navigation */
+.navigation-header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-surface-border);
+    z-index: 1000;
+}
+
+.navigation-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.navigation-logo-icon {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-accent-indigo);
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+.navigation-logo-text {
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.navigation-links-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.navigation-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation-link:hover {
+    color: var(--color-text-primary);
+}
+
+.navigation-contact-button {
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    background-color: var(--color-surface-border);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-contact-button:hover {
+    background-color: #334155;
+}
+
+/* Hero Section Container */
+.hero-section-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; 
+    padding: 6rem 3rem;
+    overflow: hidden;
+    padding-top: 25%;
+}
+
+/* Layer 1: Background Video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+/* Layer 2: Glass Overlay */
+.background-glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 3;
+}
+
+/* Layer 3: Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/Ghost.png");
+    background-size: cover; 
+    background-position: center;
+    z-index: 4;
+}
+
+/* Layer 4: The Content */
+.hero-content-wrapper {
+    position: relative; 
+    z-index: 4; 
+    background: linear-gradient(
+        0deg, 
+        rgba(255, 255, 255, 0.5),    /* Bottom: Solid */
+        rgba(235, 228, 231, 0.45), 
+        rgba(214, 201, 208, 0.4), 
+        rgba(193, 176, 187, 0.35), 
+        rgba(170, 151, 168, 0.3), 
+        rgba(147, 128, 150, 0.25),  /* Starts fading slightly */
+        rgba(122, 105, 134, 0.2),  /* More transparent */
+        rgba(97, 84, 117, 0.15),    /* Mostly transparent */
+        rgba(70, 65, 102, 0.1),   /* Barely visible */
+        rgba(41, 47, 86, 0)        /* Top: Fully transparent */
+    );
+    padding-top: 20%;
+    padding-bottom: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    border-radius: 10%;
+}
+
+
+.hero-background-gradient-primary,
+.hero-background-gradient-secondary {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-background-gradient-primary {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vh;
+    background-color: rgba(99, 102, 241, 0.2);
+}
+
+.hero-background-gradient-secondary {
+    top: 40%;
+    right: -10%;
+    width: 40vw;
+    height: 40vh;
+    background-color: rgba(52, 211, 153, 0.15);
+}
+
+.hero-content-wrapper {
+    max-w: 56rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-profile-image-wrapper {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+}
+
+.hero-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-greeting-text {
+    color: var(--color-accent-indigo);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.hero-profession-text {
+    color: var(--color-text-secondary);
+}
+
+.hero-main-headline {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.headline-highlight-text {
+    background: linear-gradient(to right, var(--color-accent-indigo), var(--color-accent-emerald));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-description-text {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 42rem;
+    margin-bottom: 3rem;
+}
+
+.hero-primary-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background-color: var(--color-text-primary);
+    color: var(--color-background-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.hero-primary-button:hover {
+    background-color: #e2e8f0;
+}
+
+/* Projects Section & Flip Cards */
+.projects-section-container {
+    padding: 8rem 3rem;
+    background-color: var(--color-background-dark);
+}
+
+.projects-header-container {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.projects-main-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.projects-sub-heading {
+    color: var(--color-text-secondary);
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.project-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.project-flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.project-flip-card-inner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.project-flip-card:hover .project-flip-card-inner-container {
+    transform: rotateY(180deg);
+}
+
+.project-flip-card-front-face, 
+.project-flip-card-back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-surface-border);
+    overflow: hidden;
+}
+
+.project-flip-card-front-face {
+    background-color: var(--color-surface-dark);
+}
+
+.project-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--color-surface-border);
+}
+
+.project-card-content {
+    padding: 1.5rem;
+}
+
+.project-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.project-card-technologies-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.project-card-technologies-list {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.technology-badge {
+    background-color: var(--color-surface-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--color-accent-emerald);
+}
+
+.project-flip-card-back-face {
+    background-color: var(--color-accent-indigo);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.project-card-back-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card-back-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.project-external-link-button {
+    background-color: white;
+    color: var(--color-accent-indigo);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.project-external-link-button:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+.website-footer-container {
+    border-top: 1px solid var(--color-surface-border);
+    padding: 3rem;
+    background-color: var(--color-background-dark);
+}
+
+.footer-content-wrapper {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright-text {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.footer-social-links-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-social-link:hover {
+    color: var(--color-accent-emerald);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navigation-links-container { display: none; }
+    .hero-main-headline { font-size: 3rem; }
+    .headline-line-break { display: none; }
+    .footer-content-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
