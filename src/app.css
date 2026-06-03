@@ -5,6 +5,7 @@
     --color-surface-border: #1e293b;
     --color-text-primary: #f8fafc;
     --color-text-secondary: #94a3b8;
+    --color-text-hero: #000000;
     --color-accent-indigo: #6366f1;
     --color-accent-emerald: #34d399;
 }
@@ -156,17 +157,18 @@ html {
     z-index: 4; 
     background: linear-gradient(
         0deg, 
-        rgba(255, 255, 255, 0.5),    /* Bottom: Solid */
-        rgba(235, 228, 231, 0.45), 
-        rgba(214, 201, 208, 0.4), 
-        rgba(193, 176, 187, 0.35), 
-        rgba(170, 151, 168, 0.3), 
-        rgba(147, 128, 150, 0.25),  /* Starts fading slightly */
-        rgba(122, 105, 134, 0.2),  /* More transparent */
-        rgba(97, 84, 117, 0.15),    /* Mostly transparent */
-        rgba(70, 65, 102, 0.1),   /* Barely visible */
-        rgba(41, 47, 86, 0)        /* Top: Fully transparent */
+        rgba(255, 255, 255, 0.75),    /* Bottom: Solid */
+        rgba(235, 228, 231, 0.7), 
+        rgba(214, 201, 208, 0.65), 
+        rgba(193, 176, 187, 0.6), 
+        rgba(170, 151, 168, 0.55), 
+        rgba(147, 128, 150, 0.5),  /* Starts fading slightly */
+        rgba(122, 105, 134, 0.45),  /* More transparent */
+        rgba(97, 84, 117, 0.35),    /* Mostly transparent */
+        rgba(70, 65, 102, 0.3),   /* Barely visible */
+        rgba(41, 47, 86, 0.25)        /* Top: Fully transparent */
     );
+    margin-top: 200px;
     padding-top: 20%;
     padding-bottom: 5%;
     padding-left: 20%;
@@ -202,7 +204,6 @@ html {
 }
 
 .hero-content-wrapper {
-    max-w: 56rem;
     margin: 0 auto;
     position: relative;
     z-index: 10;
@@ -232,12 +233,13 @@ html {
 .hero-greeting-text {
     color: var(--color-accent-indigo);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.875rem;
+    font-size: 1.375rem;
     margin-bottom: 0.25rem;
 }
 
 .hero-profession-text {
-    color: var(--color-text-secondary);
+    font-size: 1.275rem;
+    color: var(--color-text-hero);
 }
 
 .hero-main-headline {
@@ -254,8 +256,8 @@ html {
 }
 
 .hero-description-text {
-    font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    font-size: 2.25rem;
+    color: var(--color-text-hero);
     max-width: 42rem;
     margin-bottom: 3rem;
 }
