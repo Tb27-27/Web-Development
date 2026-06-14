@@ -48,8 +48,7 @@ Ik maak er gewoon een single-page applicatie van.
 Bovenin een Header en een stukje About me, in het midden het Work/Projects overzicht en onderaan een simpele Contact/Footer. 
 Ik ga niet gebruik maken van zware frameworks, ik build het HTML, CSS en wat basic JavaScript. 
 Hierdoor kan ik makkelijk op github mijn portfolio hosten op github.
-De mapjes structuur is vrij standaard: een `src` folder voor de echte code.
-Een `Documentation` map voor documentatie en een `images` mapje voor de assets.
+De mappen structuur is vrij standaard: een `src` folder voor de echte code, een `Documentation` map voor school documenten en een `assets` mapje voor de media.
 
 ---
 

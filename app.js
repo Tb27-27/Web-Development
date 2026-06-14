@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 // Add a simple fade-in/up class via Javascript logic 
-                // (You can also expand app.css with these classes if you want CSS keyframes)
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
                 observer.unobserve(entry.target);
